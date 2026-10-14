@@ -1,0 +1,99 @@
+---
+name:  dmrt
+title: ANOVA with Duncan Post Hoc
+menuGroup: DMRT
+version: '1.0.0'
+jas: '1.2'
+
+options:
+    - name: data
+      type: Data
+
+    - name: dep
+      title: Dependent Variable
+      type: Variable
+      suggested: [continuous]
+      permitted: [numeric]
+
+    - name: factors
+      title: Fixed Factors
+      type: Variables
+      suggested: [nominal, ordinal]
+      permitted: [factor]
+      default: NULL
+
+    - name: blk
+      title: Block (optional, for RCBD)
+      type: Variable
+      default: NULL
+      suggested: [nominal, ordinal]
+      permitted: [factor]
+
+    - name: modelTerms
+      title: Model Terms
+      type: Terms
+      default: NULL
+
+    - name: postHoc
+      title: Post Hoc Tests
+      type: Terms
+      default: NULL
+
+    - name: postHocDuncan
+      title: Duncan's multiple range test
+      type: Bool
+      default: false
+
+    - name: alpha
+      title: Significance level (α)
+      type: Number
+      min: 0.001
+      max: 0.5
+      default: 0.05
+
+    - name: requireSignificantF
+      title: Show letters only if the term's F-test is significant
+      type: Bool
+      default: true
+
+    - name: descriptives
+      title: Show N and S.D. in the post hoc tables
+      type: Bool
+      default: true
+
+    - name: meanType
+      title: Means (unbalanced designs)
+      type: List
+      options:
+        - name: adjusted
+          title: Least-squares (recommended)
+        - name: raw
+          title: Raw means (agricolae)
+      default: adjusted
+
+    - name: reportTable
+      title: Report table (Mean ± S.D. with letters)
+      type: Bool
+      default: false
+
+    - name: decimals
+      title: Decimal places
+      type: List
+      options:
+        - name: auto
+          title: Auto (2; 3 if below 1)
+        - name: '1'
+          title: '1'
+        - name: '2'
+          title: '2'
+        - name: '3'
+          title: '3'
+        - name: '4'
+          title: '4'
+      default: auto
+
+    - name: plot
+      title: Interaction plot (first two-factor term)
+      type: Bool
+      default: false
+...

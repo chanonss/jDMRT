@@ -1,0 +1,94 @@
+---
+name:  dmrt
+title: ANOVA with Duncan Post Hoc
+jrs: '1.1'
+
+refs:
+    - duncan1955
+    - kramer1956
+    - agricolae
+    - emmeans
+    - R
+
+items:
+    - name: anova
+      title: ANOVA (Type III sums of squares)
+      type: Table
+      rows: 0
+      clearWith: [dep, factors, blk, modelTerms]
+      columns:
+        - name: term
+          title: ''
+          type: text
+        - name: df
+          title: df
+          type: integer
+        - name: ss
+          title: Sum of Squares
+          type: number
+        - name: ms
+          title: Mean Square
+          type: number
+        - name: f
+          title: F
+          type: number
+        - name: p
+          title: p
+          type: number
+          format: zto,pvalue
+
+    - name: postHocTables
+      title: Duncan's Multiple Range Test
+      type: Array
+      items: (postHoc)
+      visible: (postHocDuncan)
+      template:
+          title: ''
+          type: Table
+          rows: 0
+          clearWith: [dep, factors, blk, modelTerms, postHoc, postHocDuncan, alpha, requireSignificantF, meanType]
+          columns:
+            - name: n
+              title: N
+              type: integer
+              visible: (descriptives)
+            - name: sd
+              title: SD
+              type: number
+              visible: (descriptives)
+            - name: mean
+              title: Mean
+              type: number
+            - name: letter
+              title: Group
+              type: text
+
+    - name: report
+      title: Report table
+      type: Table
+      rows: 0
+      visible: (reportTable)
+      clearWith: [dep, factors, blk, modelTerms, postHoc, postHocDuncan, alpha, requireSignificantF, meanType, decimals]
+      columns:
+        - name: part
+          title: ''
+          type: text
+        - name: level
+          title: ''
+          type: text
+        - name: n
+          title: N
+          type: integer
+        - name: value
+          title: Mean ± S.D.
+          type: text
+
+    - name: plot
+      title: Interaction plot
+      type: Image
+      width: 520
+      height: 360
+      renderFun: .plot
+      visible: (plot)
+      clearWith: [dep, factors, blk, modelTerms, postHoc, postHocDuncan, alpha, requireSignificantF, meanType]
+...

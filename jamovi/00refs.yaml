@@ -1,0 +1,42 @@
+---
+refs:
+    duncan1955:
+        type: 'article'
+        author: Duncan, D. B.
+        year: 1955
+        title: 'Multiple range and multiple F tests'
+        publisher: 'Biometrics, 11(1), 1-42'
+        url: https://doi.org/10.2307/3001478
+
+    kramer1956:
+        type: 'article'
+        author: Kramer, C. Y.
+        year: 1956
+        title: 'Extension of multiple range tests to group means with unequal numbers of replications'
+        publisher: 'Biometrics, 12(3), 307-310'
+        url: https://doi.org/10.2307/3001469
+
+    agricolae:
+        type: 'software'
+        author: de Mendiburu, F.
+        year: 2023
+        title: 'agricolae: Statistical Procedures for Agricultural Research'
+        publisher: '[R package]. Retrieved from https://cran.r-project.org/package=agricolae'
+        url: https://cran.r-project.org/package=agricolae
+
+    emmeans:
+        type: 'software'
+        author: Lenth, R.
+        year: 2025
+        title: 'emmeans: Estimated Marginal Means, aka Least-Squares Means'
+        publisher: '[R package]. Retrieved from https://cran.r-project.org/package=emmeans'
+        url: https://cran.r-project.org/package=emmeans
+
+    R:
+        type: 'software'
+        author: R Core Team
+        year: 2025
+        title: 'R: A Language and Environment for Statistical Computing'
+        publisher: '(Version 4.5) [Computer software]. Retrieved from https://cran.r-project.org/'
+        url: https://cran.r-project.org/
+...

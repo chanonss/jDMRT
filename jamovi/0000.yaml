@@ -1,0 +1,30 @@
+---
+title: DMRT
+name: jDMRT
+version: 0.5.4
+jms: '1.0'
+authors:
+  - Chanon Sarasuk
+maintainer: >-
+  Chanon Sarasuk (Faculty of Home Economics Technology, Rajamangala University
+  of Technology Krungthep)
+date: '2026-10-14'
+type: R
+description: >-
+  Duncan's multiple range test for one-way ANOVA, RCBD and two-way factorial
+  ANOVA (balanced or unbalanced).
+analyses:
+  - title: ANOVA with Duncan Post Hoc
+    name: dmrt
+    ns: jDMRT
+    menuGroup: DMRT
+    menuSubgroup: ''
+    menuTitle: ANOVA with Duncan Post Hoc
+    description: >-
+      ANOVA (one-way, RCBD or factorial, optional block) with Duncan's multiple
+      range test group letters and a Mean ± S.D. report table.
+    category: analyses
+usesNative: true
+minApp: 1.0.8
+
+...

@@ -1,0 +1,106 @@
+title: ANOVA with Duncan Post Hoc
+name: dmrt
+jus: '3.0'
+stage: 0
+compilerMode: tame
+children:
+  - type: VariableSupplier
+    persistentItems: false
+    stretchFactor: 1
+    children:
+      - type: TargetLayoutBox
+        label: Dependent Variable
+        children:
+          - type: VariablesListBox
+            name: dep
+            maxItemCount: 1
+            isTarget: true
+      - type: TargetLayoutBox
+        label: Fixed Factors
+        children:
+          - type: VariablesListBox
+            name: factors
+            isTarget: true
+      - type: TargetLayoutBox
+        label: Block (optional, for RCBD)
+        children:
+          - type: VariablesListBox
+            name: blk
+            maxItemCount: 1
+            isTarget: true
+  - type: CollapseBox
+    label: Model
+    collapsed: true
+    stretchFactor: 1
+    children:
+      - type: Supplier
+        name: modelSupplier
+        label: Components
+        persistentItems: true
+        stretchFactor: 1
+        format: term
+        children:
+          - type: TargetLayoutBox
+            transferAction: interactions
+            children:
+              - type: ListBox
+                name: modelTerms
+                valueFilter: unique
+                isTarget: true
+                itemDropBehaviour: emptyspace
+                template:
+                  type: TermLabel
+  - type: CollapseBox
+    label: Post Hoc Tests
+    collapsed: false
+    stretchFactor: 1
+    children:
+      - type: Supplier
+        name: postHocSupplier
+        persistentItems: false
+        stretchFactor: 1
+        format: term
+        children:
+          - type: TargetLayoutBox
+            label: ''
+            children:
+              - type: ListBox
+                name: postHoc
+                isTarget: true
+                template:
+                  type: TermLabel
+      - type: LayoutBox
+        margin: large
+        children:
+          - type: CheckBox
+            name: postHocDuncan
+            children:
+              - type: TextBox
+                name: alpha
+                format: number
+                enable: (postHocDuncan)
+              - type: CheckBox
+                name: requireSignificantF
+                enable: (postHocDuncan)
+              - type: CheckBox
+                name: descriptives
+                enable: (postHocDuncan)
+              - type: ComboBox
+                name: meanType
+                enable: (postHocDuncan)
+  - type: CollapseBox
+    label: Report
+    collapsed: true
+    stretchFactor: 1
+    children:
+      - type: LayoutBox
+        margin: large
+        children:
+          - type: CheckBox
+            name: reportTable
+            children:
+              - type: ComboBox
+                name: decimals
+                enable: (reportTable)
+          - type: CheckBox
+            name: plot
