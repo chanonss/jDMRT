@@ -1,0 +1,7 @@
+.DS_Store
+build/
+temp/
+inst/
+R/*.h.R
+R/00jmv.R
+*.jmo
