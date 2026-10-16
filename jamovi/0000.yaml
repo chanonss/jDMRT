@@ -1,14 +1,14 @@
 ---
 title: DMRT
 name: jDMRT
-version: 0.5.4
+version: 0.5.5
 jms: '1.0'
 authors:
   - Chanon Sarasuk
 maintainer: >-
-  Chanon Sarasuk (Faculty of Home Economics Technology, Rajamangala University
-  of Technology Krungthep)
-date: '2026-10-14'
+  Chanon Sarasuk <chanon.s@rmutk.ac.th> (Faculty of Home Economics Technology,
+  Rajamangala University of Technology Krungthep)
+date: '2026-10-16'
 type: R
 description: >-
   Duncan's multiple range test for one-way ANOVA, RCBD and two-way factorial
@@ -26,5 +26,18 @@ analyses:
     category: analyses
 usesNative: true
 minApp: 1.0.8
+datasets:
+  - name: Rice RCBD (simulated, 2 plots missing)
+    path: RiceRCBD.csv
+    description: >-
+      Simulated randomised complete block design, 5 rice varieties x 6 blocks,
+      with two plots missing (unbalanced). Use Yield as dependent variable,
+      Variety as fixed factor, Block as block.
+  - name: Fertilizer x Variety factorial (simulated)
+    path: FertilizerFactorial.csv
+    description: >-
+      Simulated 3 x 2 factorial in 4 blocks. Use Yield as dependent variable,
+      Fertilizer and Variety as fixed factors, Block as block; tick Duncan's
+      test for the terms of interest.
 
 ...

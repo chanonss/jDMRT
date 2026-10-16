@@ -1,7 +1,7 @@
 Package: jDMRT
 Type: Package
 Title: Duncan's Multiple Range Test for jamovi
-Version: 0.5.4
+Version: 0.5.5
 Description: ANOVA (one-way, RCBD, factorial) with Duncan's multiple range test (DMRT) and a Mean +/- S.D. report table.
 Author: Chanon Sarasuk, Faculty of Home Economics Technology, Rajamangala University of Technology Krungthep
 License: GPL (>= 2)

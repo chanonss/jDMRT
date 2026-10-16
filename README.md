@@ -16,6 +16,13 @@ and food/sensory research.
 Means sharing a letter are not significantly different at the chosen α.
 If the term's ANOVA F-test is not significant, letters are suppressed (`ns`) — this can be switched off.
 
+## Example data
+Two simulated datasets ship with the module (jamovi: Open → Data Library → *jDMRT*):
+- **Rice RCBD** — 5 varieties × 6 blocks with two plots missing (unbalanced). Dependent *Yield*,
+  fixed factor *Variety*, block *Block*, tick Duncan for *Variety*.
+- **Fertilizer × Variety factorial** — 3 × 2 in 4 blocks, with a significant interaction.
+  Dependent *Yield*, fixed factors *Fertilizer* and *Variety*, block *Block*.
+
 ## Methods
 - Type III sums of squares for the ANOVA table; letters use the error term of the full model.
 - *Means (unbalanced designs)*:
@@ -49,5 +56,10 @@ GPL (>= 2), see `LICENSE`.
 ### Shared code
 `R/duncanCompute.R` is a copy of `../../shared/duncanCompute.R`. Edit it there and run `../../scripts/sync.sh`.
 
-### Test (plain R, needs agricolae, car, emmeans)
+### Tests
+`tests/test_duncan.R` (plain R, needs agricolae, car, emmeans) checks the statistics;
+`tests/robustness_test.R` runs the installed module through missing data, odd variable names,
+empty/constant data etc. (see its header for how to run it with jamovi's R).
+
+### Test (statistics)
     Rscript tests/test_duncan.R

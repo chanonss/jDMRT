@@ -5,3 +5,4 @@ inst/
 R/*.h.R
 R/00jmv.R
 *.jmo
+dist/

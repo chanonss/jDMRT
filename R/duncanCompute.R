@@ -111,6 +111,12 @@
   if (!is.null(block)) d$blk <- block
   d <- d[stats::complete.cases(d), , drop = FALSE]
   for (col in setdiff(names(d), "y")) d[[col]] <- droplevels(as.factor(d[[col]]))
+  if (nrow(d) < 2)
+    stop("Fewer than 2 complete observations; check the data for missing values.", call. = FALSE)
+  if (any(!is.finite(d$y)))
+    stop("The dependent variable contains infinite (Inf) values.", call. = FALSE)
+  if (stats::var(d$y) == 0)
+    stop("The dependent variable is constant (no variability) after removing missing values.", call. = FALSE)
 
   if (is.null(terms) || !length(terms)) {
     terms <- .duncanFullFactorial(fn)
@@ -145,6 +151,9 @@
   rhs <- c(if (!is.null(block)) "blk", tlab)
   fit <- stats::lm(stats::reformulate(rhs, response = "y"), d, contrasts = contr)
   dfe <- fit$df.residual
+  if (anyNA(stats::coef(fit)))
+    stop("Some model terms are completely confounded (aliased) with others; ",
+         "remove a term or check the design.", call. = FALSE)
   if (dfe < 1)
     stop("Not enough data to estimate the error term; the model needs replication ",
          "(for an RCBD, remove the block interactions from the model terms).", call. = FALSE)
