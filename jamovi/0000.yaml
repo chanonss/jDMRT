@@ -5,9 +5,7 @@ version: 0.5.5
 jms: '1.0'
 authors:
   - Chanon Sarasuk
-maintainer: >-
-  Chanon Sarasuk <chanon.s@rmutk.ac.th> (Faculty of Home Economics Technology,
-  Rajamangala University of Technology Krungthep)
+maintainer: Chanon Sarasuk <chanon.s@rmutk.ac.th>
 date: '2026-10-16'
 type: R
 description: >-

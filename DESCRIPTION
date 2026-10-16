@@ -4,6 +4,7 @@ Title: Duncan's Multiple Range Test for jamovi
 Version: 0.5.5
 Description: ANOVA (one-way, RCBD, factorial) with Duncan's multiple range test (DMRT) and a Mean +/- S.D. report table.
 Author: Chanon Sarasuk, Faculty of Home Economics Technology, Rajamangala University of Technology Krungthep
+Maintainer: Chanon Sarasuk <chanon.s@rmutk.ac.th>
 License: GPL (>= 2)
 Encoding: UTF-8
 Imports: jmvcore (>= 0.8.5), R6
