@@ -53,13 +53,9 @@ GPL (>= 2), see `LICENSE`.
     jmvtools::check()                 # locate jamovi
     jmvtools::install("jDMRT")      # builds and installs into jamovi
 
-### Shared code
-`R/duncanCompute.R` is a copy of `../../shared/duncanCompute.R`. Edit it there and run `../../scripts/sync.sh`.
-
 ### Tests
 `tests/test_duncan.R` (plain R, needs agricolae, car, emmeans) checks the statistics;
 `tests/robustness_test.R` runs the installed module through missing data, odd variable names,
 empty/constant data etc. (see its header for how to run it with jamovi's R).
 
-### Test (statistics)
     Rscript tests/test_duncan.R
